@@ -372,7 +372,7 @@
    - 路径：`courses/{course_id}/runtime/mistake_log.md`
 
 7. **角色文档** — 更新态度 + 追加记忆（对学习者的新观察）
-   - 共享文件：`teacher/characters/march.md` 或 `teacher/characters/danheng.md`
+   - `teacher/skills/march.skill.md` 或 `teacher/skills/danheng.skill.md`
 
 8. **wechat_unread.md** — 生成课后群聊消息（共享文件）
 

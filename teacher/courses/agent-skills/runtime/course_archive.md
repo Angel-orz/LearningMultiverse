@@ -124,7 +124,7 @@ Skill 解剖 (Ch.1) → 评估方法 (Ch.2) → 生产化 (Ch.3)
 - KaTeX 作为公式渲染方案
 - MathClaw 的 skill-creator 是 Meta-Skill 的参考实现
 
-**天文台结构对照**：天文台的分层加载策略与 Skill 的 Progressive Disclosure 同构，Skill 化可省约 50% Token。
+**列车结构对照**：列车的分层加载策略与 Skill 的 Progressive Disclosure 同构，Skill 化可省约 50% Token。
 
 **学生课后总结**："介绍了设计/评估 Skill 时需要考虑什么。"
 
@@ -215,5 +215,5 @@ Skill 解剖 (Ch.1) → 评估方法 (Ch.2) → 生产化 (Ch.3)
 
 ---
 
-*课程生成：天文台教学系统 · Agent Skills 课程*
+*课程生成：星穹列车教学系统 · Agent Skills 课程*
 *完结日期：2026-06-27*

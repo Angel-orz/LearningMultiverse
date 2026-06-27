@@ -70,7 +70,7 @@
 
 ## Ch.5 — 三月 🎀 | 模式: 精细模式
 
-**课堂摘要**：三月带笔记本电脑——"不看教材，看 real world"。从"做/买/组合"决策框架的真实应用出发，学生用两个项目想法（高中数学家教系统 + 每周 AI 项目搜集）完整走了一遍 Discovery → Evaluation → Decision 流程。学生选择了组合路线，通过搜索发现 MathClaw（多模态数学助手，MIT）、Khayyam Math、MathPilot 等现成项目，并定位了 KaTeX 作为公式渲染方案。核心穿透：Skill 组合拓扑设计 → Dependencies 作为最重要的评估维度 → 7 项检查清单 → 天文台自身结构对照（发现它与 Skill 制式的加载策略同构）→ Token 节省估算（约 50%）→ 决定暂不重构 → 用 Skill Creator 的 6 步流程澄清了 Meta-Skill 的人机分工边界。
+**课堂摘要**：三月带笔记本电脑——"不看教材，看 real world"。从"做/买/组合"决策框架的真实应用出发，学生用两个项目想法（高中数学家教系统 + 每周 AI 项目搜集）完整走了一遍 Discovery → Evaluation → Decision 流程。学生选择了组合路线，通过搜索发现 MathClaw（多模态数学助手，MIT）、Khayyam Math、MathPilot 等现成项目，并定位了 KaTeX 作为公式渲染方案。核心穿透：Skill 组合拓扑设计 → Dependencies 作为最重要的评估维度 → 7 项检查清单 → 列车自身结构对照（发现它与 Skill 制式的加载策略同构）→ Token 节省估算（约 50%）→ 决定暂不重构 → 用 Skill Creator 的 6 步流程澄清了 Meta-Skill 的人机分工边界。
 
 **帕姆表现**：未出场。
 

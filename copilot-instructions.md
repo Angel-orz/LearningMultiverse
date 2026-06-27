@@ -1,4 +1,4 @@
-# copilot-instructions.md — 天文台家教系统（多课程引擎 v2.0）
+# copilot-instructions.md — 星穹列车家教系统（多课程引擎 v2.0）
 
 > 每次新会话开始时，必须按顺序完成以下步骤。
 > **故事层状态**：如果 `teacher/runtime/wechat_group.md` 为空（仅含头部注释，无消息记录），视为首次启动——先播放序章。
@@ -15,7 +15,7 @@
   如果为空（仅含头部注释，无消息记录）:
     → 首次启动
     → 加载 teacher/prologue.md
-    → 播放序章（完整文学性叙事，将用户带入天文台世界）
+    → 播放序章（完整文学性叙事，将用户带入星穹列车世界）
     → 序章结束后进入第零步 B
   如果不为空:
     → 已有进行中的课程
@@ -23,7 +23,7 @@
 ```
 
 > **设计意图**：序章是用户对这个世界的第一次体验，应当在任何抽象选择之前发生。
-> 让用户先"走进天文台"再问"想学什么"。
+> 让用户先"走进列车"再问"想学什么"。
 
 ### 第零步 B：课程选择（仅首次启动或未选课时执行）
 
@@ -112,11 +112,14 @@
 路径规则：优先使用 `teacher/courses/{course_id}/` 下的课程专属文件，若不存在则回退到 `teacher/` 下的共享文件。
 
 ```
-1. 当课老师的角色文档（teacher/characters/march.md 或 teacher/characters/danheng.md）— 共享
+1. 当课老师的角色文档（teacher/skills/{teacher_name}.skill.md）
+   - 如果文件不存在 → 检查 teacher/skills/capabilities.md
+   - 如果 capabilities.md 中也没有此教师 → 调用 nuwa-skill 创建（详见 teacher/skills/nuwa-integration.md）
+   - 创建完成后注册到 capabilities.md → 加载新 skill 文件
 2. 当课故事节点（优先 → teacher/courses/{course_id}/story_progression/ch{XX}.md）
 3. 当课知识点（优先 → teacher/courses/{course_id}/config/knowledge_points/ch{XX}.md）
 4. 教材对应页码范围
-5. teacher/runtime/wechat_group.md — 群聊（共享，天文台世界观一致）
+5. teacher/runtime/wechat_group.md — 群聊（共享，列车世界观一致）
 ```
 
 ### 第四步：延迟加载（仅在特定场景触发时读取）
@@ -166,7 +169,7 @@
     │     └── 无到期项 → 跳过
     │
     ├── 第三步：当课内容加载
-    │     ├── 角色文档 + 故事节点 + 知识点
+    │     ├── skill 角色文件 + 故事节点 + 知识点
     │     ├── 教材页码范围
     │     └── wechat_group.md
     │
@@ -205,7 +208,7 @@
 6. **mistake_log.md** — 记录答错的题目（如有）
    - 写入 `courses/{course_id}/runtime/mistake_log.md`
 7. **角色文档** — 更新态度 + 追加记忆（对学习者的新观察）
-   - 共享文件 `teacher/characters/march.md` 或 `teacher/characters/danheng.md`
+   - 共享文件 `teacher/skills/march.skill.md` 或 `teacher/skills/danheng.skill.md`
 8. **wechat_unread.md** — 生成课后群聊消息（共享）
 9. **diary.md** — 生成当天日记
    - 写入 `courses/{course_id}/runtime/diary.md`
@@ -239,7 +242,7 @@
 ## 完整文件树
 
 ```
-天文台家教系统/
+星穹列车家教系统/
 ├── copilot-instructions.md             # ← 本文件（系统入口）
 ├── MAINTAINER.md                       # 维护者手册
 ├── teacher/
@@ -255,9 +258,12 @@
 │   │   └── learner_profile.md          # 学习者档案（含课程ID + 模式偏好，1-2KB）
 │   │   # 知识点文件已迁移至 courses/{course_id}/config/knowledge_points/
 │   │
-│   ├── characters/
-│   │   ├── march.md                    # 三月（March）角色文件
-│   │   └── danheng.md                  # 丹恒（Dān Héng）角色文件
+│   ├── skills/                         # 📦 教师角色 skill 文件（Claude Code Skill 格式）
+│   │   ├── capabilities.md             # 教师能力档案（新老师注册时参考，不参与每会话加载）
+│   │   ├── march.skill.md              # 三月——热情类比型老师
+│   │   ├── danheng.skill.md            # 丹恒——精准结构化老师
+│   │   ├── pamm.skill.md               # 帕姆——同行学习者
+│   │   └── nuwa-integration.md         # nuwa-skill 集成桥接（新老师创建流程）
 │   │
 │   ├── story_progression/             # 通用框架 — 不含课程具体数据
 │   │   ├── overview.md                 # 通用情感阶段框架（课程数据在各 courses/ 下）
