@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 .env
 *.log
+
+# Third-party reference materials — keep locally, not on GitHub (copyright)
+Docs/
+materials/

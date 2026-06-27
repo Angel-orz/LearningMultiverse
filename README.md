@@ -26,8 +26,8 @@ You step aboard a train traveling through the stars. Two teachers — March (ene
 
 | Course | Lessons | Status |
 |--------|---------|--------|
-| **Machine Learning Strategy & Diagnosis** (Andrew Ng's ML Yearning) | 14 | ✅ Complete |
-| **AI Agent Engineering** (Kaggle Agent Series) | 6 | ✅ Complete |
+| **Machine Learning Strategy & Diagnosis** | 14 | ✅ Complete |
+| **AI Agent Engineering** | 6 | ✅ Complete |
 | **Agent Tools & Interoperability** | 5 | ✅ Complete |
 | **Agent Skills** (Build, Evaluate, Productionize) | 6 | 🔥 Active |
 
@@ -69,8 +69,6 @@ LearningMultiverse/
 │   │   └── agent-skills/
 │   ├── story_progression/         # Generic emotional-stage framework
 │   └── runtime/                   # Shared runtime state
-├── materials/                     # Textbooks (PDF)
-└── Docs/                          # Reference materials
 ```
 
 ---
@@ -87,4 +85,4 @@ LearningMultiverse/
 
 ## Acknowledgments
 
-Built on the SocraticNovel framework — a methodology combining Socratic teaching with narrative-driven learning. Inspired by Andrew Ng's *Machine Learning Yearning* and the Kaggle Agent Series.
+Built on the SocraticNovel framework — a methodology combining Socratic teaching with narrative-driven learning.
