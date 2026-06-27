@@ -78,7 +78,53 @@
 > runtime、memory、story_progression 全部按课程隔离，避免不同课程间文件覆盖。
 > 共享的核心系统文件（system_core.md、characters/）保持不变。
 
-### 第一步：加载核心（必须完整读取）
+### 第零步 D：教材来源选择（新增 — 仅新课程）
+
+在课程和模式选定后、加载核心之前，确认教材来源：
+
+```
+1. 向用户展示三种选择：
+   
+   [1] 本地文件 — 我有现成的教材文件（PDF/文档等）
+   [2] 网址链接 — 我知道教材的在线地址
+   [3] 不确定方向 — 帮我搜索推荐一些教材
+   
+2. 根据用户选择执行对应流程：
+
+   ▶ 本地文件流程：
+     a. 请用户提供文件路径（拖入终端或输入完整路径）
+     b. 确认文件存在（bash ls 验证）
+     c. 创建 Docs/{course_id}/
+     d. 复制文件到 Docs/{course_id}/（bash cp）
+     e. 如果是压缩包（.zip），解压到 Docs/{course_id}/
+     f. 记录来源信息到 teacher/config/syllabus-source.md
+     g. 告知用户文件已就绪
+
+   ▶ 网址流程：
+     a. 请用户输入 URL
+     b. 判断 URL 类型：
+        - 可下载格式（.pdf / .epub / .zip 等）→ bash curl -o Docs/{course_id}/ 下载
+        - 网页/文档 → WebFetch 提取内容，保存为 Docs/{course_id}/content.md
+        - 视频/不可直接处理 → 保存 URL 到 Docs/{course_id}/source.txt
+     c. 如果内容可提取，自动生成摘要（约 200 字）
+     d. 记录来源信息到 teacher/config/syllabus-source.md
+     e. 告知用户内容已获取
+
+   ▶ 搜索推荐流程：
+     a. 确认课程主题和关键词
+     b. 使用 WebSearch 搜索推荐教材/资料
+     c. 展示 3-5 个候选（含来源说明）
+     d. 用户选择后：
+        - 如果候选是下载链接 → 按网址流程下载
+        - 如果用户已有本地版本 → 按本地文件流程处理
+        - 如果用户都不满意 → 调整关键词重新搜索
+     e. 确认后记录来源信息
+
+3. 所有来源信息记录到 teacher/config/syllabus-source.md
+```
+
+> **设计意图**：教材来源标准化管理。每门课的原始材料都有来源记录，
+> 方便后续追溯和版权管理。
 
 1. `teacher/config/system_core.md` — 核心指令（教学法 + 叙事规则 + 流程）
 2. `teacher/story.md` — 世界观
@@ -118,7 +164,7 @@
    - 创建完成后注册到 capabilities.md → 加载新 skill 文件
 2. 当课故事节点（优先 → teacher/courses/{course_id}/story_progression/ch{XX}.md）
 3. 当课知识点（优先 → teacher/courses/{course_id}/config/knowledge_points/ch{XX}.md）
-4. 教材对应页码范围
+4. 教材对应页码范围（路径查询 teacher/config/syllabus-source.md 获取来源）
 5. teacher/runtime/wechat_group.md — 群聊（共享，列车世界观一致）
 ```
 
@@ -157,6 +203,14 @@
     │     ├── 无 course_id → 展示课程目录 → 选择 → 记录
     │     ├── 无 mode_preference → 展示模式选择 → 选择 → 记录
     │     └── 两者均有 → 跳过
+    │
+    ├── 第零步 C：新课程目录初始化（仅首次）
+    │     └── 创建 courses/{course_id}/ 目录结构
+    │
+    ├── 第零步 D：教材来源选择（仅新课程）
+    │     ├── [1] 本地文件 → 复制到 Docs/{course_id}/
+    │     ├── [2] 网址链接 → 下载/提取到 Docs/{course_id}/
+    │     └── [3] 不确定方向 → 搜索推荐 → 选定后按[1]或[2]处理
     │
     ├── 第一步：加载核心文件
     │     ├── system_core.md + story.md + 课程专属 overview.md（优先）
@@ -255,6 +309,7 @@
 │   │   ├── course_catalog.md           # 📚 课程目录（新会话或换课时加载）
 │   │   ├── course_mode.md              # 🎯 教学模式配置 + 时间估算（首次选择时加载）
 │   │   ├── curriculum.md               # 课程大纲（延迟加载）
+│   │   ├── syllabus-source.md          # 📦 教材来源索引（新课程时记录来源类型/路径）
 │   │   └── learner_profile.md          # 学习者档案（含课程ID + 模式偏好，1-2KB）
 │   │   # 知识点文件已迁移至 courses/{course_id}/config/knowledge_points/
 │   │
