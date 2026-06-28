@@ -7,10 +7,42 @@
 
 | 课程ID | 课程名称 | 教材 | 总章节 | 总页数 | 课次数 | 授课教师 |
 |--------|---------|------|--------|-------|--------|---------|
+| claude-101 | Claude 101 | Anthropic Academy (SkillJar) | 5 章 | — | 7 | 三月 / 丹恒 |
 | ml-yearning | ML 策略与诊断 | Machine Learning Yearning | 58 | 118 | 14 | 三月 / 丹恒 |
 | kaggle-agent | AI Agent 工程化 | Kaggle Agent 系列 Day 1-4 | 4 篇 | 203 | 6 | 三月 / 丹恒 |
 | agent-tools-interoperability | Agent 工具与互操作 | Agent Tools & Interoperability Day 2 | 1 篇 | 49 | 5 | 三月 / 丹恒 |
 | agent-skills | Agent Skills | Agent Skills Day 3 | 1 篇 | 62 | 6 | 三月 / 丹恒 |
+| agent-security-eval | Vibe Coding Agent 安全与评估 | Vibe Coding Agent Security and Evaluation Day 4 | 1 篇 | 41 | 6 | 三月 / 丹恒 |
+
+---
+
+### claude-101 — Claude 101
+
+- **全称**：Claude 101——从入门到精通 Claude AI 助手
+- **教材**：Anthropic Academy — *Claude 101* (SkillJar)
+- **总章节**：5 章
+- **课次数**：7 课（每课约 2 节）
+- **授课教师轮值**：三月（奇数课）、丹恒（偶数课）
+- **同行学习者**：帕姆（Pom-Pom）
+- **起点要求**：无（零基础友好）
+- **知识体系**：
+  ```
+  认识 Claude (Ch.1-2) → 组织工作 (Ch.3-4) → 扩展能力 (Ch.5-6)
+  → 综合应用 (Ch.7-8) → 进阶与认证 (Ch.9-10)
+  ```
+- **教材路径**：`Docs/claude-101/lessons_markdown/`
+
+#### 课次划分
+
+| 课次 | 教师 | 教材范围 | 课程节数 | 核心主题 |
+|------|------|---------|---------|---------|
+| Ch.1 | 三月 🎀 | Lesson 1-2 | 2节 | 认识 Claude + 第一次对话 |
+| Ch.2 | 丹恒 🗡️ | Lesson 3 | 1节 | 获取更好结果的技巧 |
+| Ch.3 | 三月 🎀 | Lesson 4 | 1节 | Projects 组织工作 |
+| Ch.4 | 丹恒 🗡️ | Lesson 5-6 | 2节 | Artifacts + Skills |
+| Ch.5 | 三月 🎀 | Lesson 7-8 | 2节 | 工具连接 + Enterprise Search |
+| Ch.6 | 丹恒 🗡️ | Lesson 9-10 | 2节 | Research Mode + Desktop App |
+| Ch.7 | 三月 🎀 | Lesson 11-14 | 4节 | 场景应用 + 结业 |
 
 ---
 
@@ -70,6 +102,35 @@
 | Ch.4 | 丹恒 🗡️ | p32-38 | 7 | Meta-Skills + 组合与打包 |
 | Ch.5 | 三月 🎀 | p39-42 | 4 | 最佳实践 + 决策指南 |
 | Ch.6 | 丹恒 🗡️ | p43-62 | 20 | Cheatsheet + 零售案例研究 |
+
+---
+
+### agent-security-eval — Vibe Coding Agent 安全与评估
+
+- **全称**：Vibe Coding Agent 安全与评估——从 7 大安全支柱到评估框架
+- **教材**：Sokratis Kartakis 等 — *Vibe Coding Agent Security and Evaluation* (Kaggle Day 4, 2026)
+- **总页数**：41 页
+- **课次数**：6 课（每课约 6-8 页）
+- **授课教师轮值**：三月（奇数课）、丹恒（偶数课）
+- **同行学习者**：帕姆（Pom-Pom）
+- **起点要求**：已完成 kaggle-agent 课程或具备 Agent 工程化基础知识
+- **知识体系**：
+  ```
+  安全基础 (Ch.1) → 沙箱与供应链 (Ch.2) → 身份与信任 (Ch.3)
+  → 可观测性 (Ch.4) → 评估框架 (Ch.5) → 评估实践 (Ch.6)
+  ```
+- **教材路径**：`Docs/Kaggle/Vibe Coding Agent Security and Evaluation_Day_4.pdf`
+
+#### 课次划分
+
+| 课次 | 教师 | 教材范围 | 页数 | 核心主题 |
+|------|------|---------|------|---------|
+| Ch.1 | 三月 🎀 | p6-12 | 7 | 安全范式转换 + 7 大支柱架构全景 |
+| Ch.2 | 丹恒 🗡️ | p13-17 | 5 | 沙箱化 + Slopsquatting + Egress + MCP Spoofing |
+| Ch.3 | 三月 🎀 | p18-23 | 6 | Confused Deputy + JIT Downscoping + Red/Blue/Green |
+| Ch.4 | 丹恒 🗡️ | p24-26 | 3 | Vibe Trajectory + Intent Drift + Circuit Breaker |
+| Ch.5 | 三月 🎀 | p27-34 | 8 | 评估 7 维度 + 6 方法 + Standardised Benchmarks |
+| Ch.6 | 丹恒 🗡️ | p35-41 | 7 | 评估实践 + Session Convergence + 用户纠错聚类 |
 
 ---
 

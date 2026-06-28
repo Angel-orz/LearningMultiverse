@@ -24,6 +24,8 @@
 | kaggle-agent | local | `Docs/Kaggle/` (多文件) | `Docs/Kaggle/` | 本地教材合集 |
 | agent-tools-interoperability | local | `Docs/Kaggle/Agent Tools & Interoperability_Day_2.pdf` | `Docs/Kaggle/` | 本地教材 |
 | agent-skills | local | `Docs/Kaggle/Agent Skills_Day_3.pdf` | `Docs/Kaggle/` | 本地教材 |
+| claude-101 | url | `https://anthropic.skilljar.com/claude-101` | `Docs/claude-101/lessons_markdown/` | SkillJar 在线课程，需登录 |
+| agent-security-eval | local | `Docs/Kaggle/Vibe Coding Agent Security and Evaluation_Day_4.pdf` | `Docs/Kaggle/` | 本地教材 |
 
 ---
 

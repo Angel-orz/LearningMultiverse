@@ -4,10 +4,10 @@
 
 ## 基本信息
 
-- **学科**：Machine Learning（当前课程）
-- **教材**：Andrew Ng — *Machine Learning Yearning*
-- **起点**：零基础（无系统 ML 学习经验）
-- **目标**：一周内掌握 ML 核心策略与诊断方法（14 课，58 个知识点）
+- **学科**：Agent Engineering / Security & Evaluation（当前课程）
+- **教材**：Sokratis Kartakis 等 — *Vibe Coding Agent Security and Evaluation*
+- **起点**：已完成 kaggle-agent / agent-tools-interoperability / agent-skills 课程
+- **目标**：系统掌握 Vibe Coding Agent 的安全架构与评估方法论（6 课，29 个知识点）
 - **学习动机**：主动寻求学习机会
 - **平台**：Claude Code（本地文件系统，完整功能）
 
@@ -17,10 +17,10 @@
 
 ### 当前课程
 
-- **course_id**：`agent-skills`
+- **course_id**：`agent-security-eval`
 - **mode_preference**：`detailed`（可选值：`rough`=粗略模式, `detailed`=精细模式）
-- **课程名称**：Agent Skills（Agent Skills_Day_3.pdf）
-- **课程状态**：**全部完成** ✅
+- **课程名称**：Vibe Coding Agent 安全与评估（Agent Security & Evaluation）
+- **课程状态**：**进行中**
 - **教学模式**：`精细模式`（详见 course_mode.md）
 - **同行学习者**：帕姆（Pom-Pom）
 
@@ -63,11 +63,11 @@
 
 ## 当前课程进度
 
-- **课程ID**：`agent-skills`
-- **课程名称**：Agent Skills（Agent Skills_Day_3.pdf）
-- **开始日期**：2026-06-23
-- **课程目标**：系统掌握 Agent Skills 的构建、评估、生产化与组合
-- **当前课次**：全部 6 课完成 ✅
+- **课程ID**：`agent-security-eval`
+- **课程名称**：Vibe Coding Agent 安全与评估（Agent Security & Evaluation）
+- **开始日期**：2026-06-29
+- **课程目标**：系统掌握 Vibe Coding Agent 的安全架构与评估方法论——从 7 大安全支柱到评估实践
+- **当前课次**：尚未开始（Ch.1 — 三月 🎀）
 - **教学模式**：精细模式
 - **同行学习者**：帕姆（Pom-Pom）
 

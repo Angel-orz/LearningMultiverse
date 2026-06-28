@@ -36,6 +36,7 @@
       → 读取 teacher/config/course_catalog.md
       → 展示课程列表，等待用户选择
       → 将所选课程的 course_id 写入 learner_profile.md（"当前课程"章节）
+      → 将 mode_preference 设为空（新课程需要重新选择教学模式）
       → 初始化对应课程的 progress.md
       → 继续第零步 B-3
    b. 如果 course_id 存在：
@@ -121,6 +122,11 @@
      e. 确认后记录来源信息
 
 3. 所有来源信息记录到 teacher/config/syllabus-source.md
+
+> **✅ 第零步 D 完成检查清单：**
+> - [ ] 内容已保存到 `Docs/{course_id}/`（注意是 root-level `Docs/`，不是 `teacher/Docs/`）
+> - [ ] 已生成约 200 字内容摘要告知用户教材概貌
+> - [ ] 来源信息已记录到 teacher/config/syllabus-source.md
 ```
 
 > **设计意图**：教材来源标准化管理。每门课的原始材料都有来源记录，
@@ -295,6 +301,9 @@
 
 ## 完整文件树
 
+> **⚠️ Docs 路径规则**：教材文档统一存放在 root-level `Docs/`（即 `/Users/yanganqi/socratic/Docs/`），新增课程在 `Docs/{course_id}/` 下创建目录。**不要**使用 `teacher/Docs/`。
+> 引用来源路径时也使用 `Docs/...`，而非 `teacher/Docs/...`。
+
 ```
 星穹列车家教系统/
 ├── copilot-instructions.md             # ← 本文件（系统入口）
@@ -362,12 +371,12 @@
 │   ├── memory/                       # 记忆索引（指向 courses/*/memory/）
 │   │   └── README.md                 # 索引 + 新建课程指引
 │   │
-│   ├── Docs/                              # 参考文档
+│   ├── Docs/                              # ⚠️ 教材文档根目录（root-level Docs/ 是主目录）
 │   │
-│   └── materials/
-    ├── textbook/
-    │   └── andrew-ng-machine-learning-yearning.pdf
-    └── 练习册/
+│   └── materials/                         # ⚠️ 已废弃（文件已移至 root-level Docs/）
+        ├── textbook/
+        │   └── andrew-ng-machine-learning-yearning.pdf
+        └── 练习册/
 ```
 
 ---
